@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>系统页面</title>
+
+  <link type="text/css" rel="stylesheet" th:href="@{css/style.css}" >
+</head>
+<body>
+  <div class="container-scroller">
+    <!--href="http://localhost:8081/auth/logout"-->
+    <a th:href="@{/logout}" >退出</a>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img th:src="@{images/dashboard/circle.svg}"  class="card-img-absolute" alt="circle-image"/>
+                    <h2 class="mb-5"><a href="http://localhost:8082/ui/test" style="color: white">系统1</a></h2>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-4 stretch-card grid-margin">
+              <div class="card bg-gradient-info card-img-holder text-white">
+                <div class="card-body">
+                  <img th:src="@{images/dashboard/circle.svg}" class="card-img-absolute" alt="circle-image"/>
+                  <h2 class="mb-5"><a href="http://localhost:8082/ui/list" style="color: white">系统2</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+
+</body>
+
+</html>

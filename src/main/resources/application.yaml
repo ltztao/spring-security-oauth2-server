@@ -1,0 +1,57 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      timeout: 3600 # session超时时间为3600秒
+    context-path: /auth
+
+logging:
+  config: classpath:logback.xml
+
+spring:
+  # thymeleaf
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+    check-template-location: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      ## 连接池名称
+      pool-name: MyHikariCP
+      ## 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      ## 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      ## 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 600000
+      ## 最小空闲连接数量
+      minimum-idle: 10
+  session:
+    store-type: redis
+#    timeout: 60
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 2
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    # password:
+
+#开启驼峰转换
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
