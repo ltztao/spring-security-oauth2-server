@@ -54,7 +54,7 @@ public class BrowerSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable();
         http.sessionManagement().invalidSessionUrl("/login");
         //单用户登录，如果有一个登录了，同一个用户在其他地方不能登录
-        http.sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(true);
+        http.sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(false);
     }
 
     @Override
